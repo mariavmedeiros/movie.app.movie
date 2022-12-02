@@ -22,7 +22,12 @@ form.addEventListener("submit", (e) => {
   const searchTerm = search.value;
 
   if (searchTerm && searchTerm !== "") {
-    getMovies(SEARCH_API);
+    getMovies(SEARCH_API + searchTerm);
+
+    search.value = "";
+  } else {
+    window.location.reload();
   }
 });
+
 //  api_key = fbf1bdfa52a8b385e5cbaa0f6f684494;
